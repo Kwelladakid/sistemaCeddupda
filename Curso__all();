@@ -1,0 +1,41 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#5999
+    [34mall[39m: [
+      [34;4mApp\Models\Aluno[39;24m {#6000
+        [34mid[39m: [35m1[39m,
+        [34mnome[39m: "[32mMaria Padilha dos Santos[39m",
+        [34mcpf[39m: "[32m138.942.897-05[39m",
+        [34mdata_nascimento[39m: "[32m1992-08-21[39m",
+        [34mendereco[39m: "[32mAlto da Coisa[39m",
+        [34mtelefone[39m: "[32m82999998888[39m",
+        [34memail[39m: "[32mpadilha@email.com[39m",
+        [34mstatus[39m: "[32mativo[39m",
+        [34mcreated_at[39m: "[32m2025-06-20 01:20:31[39m",
+        [34mupdated_at[39m: "[32m2025-06-22 12:38:16[39m",
+      },
+      [34;4mApp\Models\Aluno[39;24m {#6001
+        [34mid[39m: [35m2[39m,
+        [34mnome[39m: "[32mCarlos Manuel Oliveira[39m",
+        [34mcpf[39m: "[32m123.456.789-00[39m",
+        [34mdata_nascimento[39m: "[32m1992-10-15[39m",
+        [34mendereco[39m: "[32mCentro de Um Lugar, 29[39m",
+        [34mtelefone[39m: "[32m82888887777[39m",
+        [34memail[39m: "[32mcarlos@uol.com.br[39m",
+        [34mstatus[39m: "[32mativo[39m",
+        [34mcreated_at[39m: "[32m2025-06-22 12:32:26[39m",
+        [34mupdated_at[39m: "[32m2025-06-22 12:32:26[39m",
+      },
+      [34;4mApp\Models\Aluno[39;24m {#6002
+        [34mid[39m: [35m3[39m,
+        [34mnome[39m: "[32mThiago Sandos Marinho[39m",
+        [34mcpf[39m: "[32m321.445.678-09[39m",
+        [34mdata_nascimento[39m: "[32m2002-03-12[39m",
+        [34mendereco[39m: "[32mAlto da Moita, n:29, Centro, Pão de Açúcar/AL[39m",
+        [34mtelefone[39m: "[32m(82)99999-9999[39m",
+        [34memail[39m: "[32mmarinho@email.com[39m",
+        [34mstatus[39m: "[32mativo[39m",
+        [34mcreated_at[39m: "[32m2025-06-25 21:06:37[39m",
+        [34mupdated_at[39m: "[32m2025-06-25 21:06:37[39m",
+      },
+    ],
+  }
+
