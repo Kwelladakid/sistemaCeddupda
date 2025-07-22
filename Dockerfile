@@ -1,20 +1,20 @@
-FROM php:8.2-fpm
+FROM php:8.2-apache
 
-RUN apt-get update && apt-get install -y \
-    libzip-dev unzip git curl libpng-dev libonig-dev libxml2-dev \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
+# Instala extensões requeridas pelo Laravel
+RUN docker-php-ext-install pdo pdo_mysql
 
-COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
+# Instala Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www
+# Copia seu projeto para a imagem
+COPY . /var/www/html
 
-COPY . /var/www
+# Permite o Apache acessar os arquivos
+RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html
 
-RUN composer install --no-dev --optimize-autoloader
+# Porta padrão Apache
+EXPOSE 80
 
-RUN cp .env.example .env || true
-RUN chmod -R 775 storage bootstrap/cache || true
-
-EXPOSE 8000
-
-CMD php artisan serve --host=0.0.0.0 --port=8000
+# Comando padrão do Apache
+CMD ["apache2-foreground"]
