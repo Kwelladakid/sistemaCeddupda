@@ -17,9 +17,6 @@ COPY . /var/www
 # Instala dependências do projeto
 RUN composer install --optimize-autoloader --no-dev
 
-# Gera APP_KEY
-RUN php artisan key:generate
-
 # Expondo a porta padrão
 EXPOSE 8000
 
