@@ -6,15 +6,17 @@ RUN docker-php-ext-install pdo pdo_mysql
 # Instala Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Copia seu projeto para a imagem
+# Copia arquivos composer antes, para cache eficiente
+COPY composer.json composer.lock /var/www/html/
+WORKDIR /var/www/html
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+# Copia o restante do projeto
 COPY . /var/www/html
 
-# Permite o Apache acessar os arquivos
-RUN chown -R www-data:www-data /var/www/html
-RUN chmod -R 755 /var/www/html
+# Permissões ideais para storage/cache Laravel
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Porta padrão Apache
 EXPOSE 80
-
-# Comando padrão do Apache
 CMD ["apache2-foreground"]
